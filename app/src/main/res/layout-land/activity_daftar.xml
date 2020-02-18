@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFirstDark"
+    tools:context=".Daftar">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/Card_Kelas"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_margin="20dp"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/TvIdClassCode"
+                                android:layout_width="@dimen/card_lebar_pertanyaan"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:text="000000"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorFirstDark"
+                                android:textSize="36sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toTopOf="@+id/TvNameClass"
+                                app:layout_constraintEnd_toEndOf="@+id/TvNameClass"
+                                app:layout_constraintStart_toStartOf="@+id/TvNameClass"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_chainStyle="packed" />
+
+                            <TextView
+                                android:id="@+id/TvNameGuru"
+                                android:layout_width="@dimen/card_lebar_pertanyaan"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="Nama Guru"
+                                android:textAlignment="center"
+                                android:textSize="16dp"
+                                app:layout_constraintBottom_toTopOf="@+id/TvInstitut"
+                                app:layout_constraintEnd_toEndOf="@+id/TvInstitut"
+                                app:layout_constraintStart_toStartOf="@+id/TvInstitut"
+                                app:layout_constraintTop_toBottomOf="@+id/TvNameClass" />
+
+                            <TextView
+                                android:id="@+id/TvInstitut"
+                                android:layout_width="@dimen/card_lebar_pertanyaan"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Institut"
+                                android:textAlignment="center"
+
+                                android:textSize="16dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/TvNameGuru" />
+
+                            <TextView
+                                android:id="@+id/TvNameClass"
+                                android:layout_width="@dimen/card_lebar_pertanyaan"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="Nama Kelas"
+                                android:textAlignment="center"
+                                android:textSize="16dp"
+                                app:layout_constraintBottom_toTopOf="@+id/TvNameGuru"
+                                app:layout_constraintEnd_toEndOf="@+id/TvNameGuru"
+                                app:layout_constraintStart_toStartOf="@+id/TvNameGuru"
+                                app:layout_constraintTop_toBottomOf="@+id/TvIdClassCode" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            tools:layout_editor_absoluteX="403dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/CardNamaLengkap"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                app:layout_constraintBottom_toTopOf="@+id/CardNIS"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:hint="Nama Lengkap"
+                                    android:textAlignment="center"
+                                    android:textColorHint="@color/colorFirstDark"
+                                    android:textStyle="bold"
+                                    app:endIconMode="clear_text">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/EdtNama"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/colorThird"
+                                        android:textColor="@color/colorFirstDark"
+                                        android:textStyle="bold" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/CardNIS"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                app:layout_constraintBottom_toTopOf="@+id/RgJenisKelamin"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/CardNamaLengkap">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:hint="NIS"
+                                    android:textAlignment="center"
+                                    android:textColorHint="@color/colorFirstDark"
+                                    android:textStyle="bold"
+                                    app:counterEnabled="true"
+                                    app:counterMaxLength="10"
+                                    app:counterTextColor="@color/colorFirstDark"
+                                    app:endIconMode="clear_text">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/EdtNIS"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/colorThird"
+                                        android:inputType="number"
+                                        android:maxLength="10"
+                                        android:textColor="@color/colorFirstDark"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <RadioGroup
+                                android:id="@+id/RgJenisKelamin"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="17dp"
+                                android:checkedButton="@+id/RbLaki"
+                                android:orientation="horizontal"
+                                android:weightSum="2"
+                                app:layout_constraintBottom_toTopOf="@+id/CardUmur"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/CardNIS">
+
+                                <RadioButton
+                                    android:id="@+id/RbLaki"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Laki-laki"
+                                    android:textColor="@color/colorFirstDark" />
+
+                                <RadioButton
+                                    android:id="@+id/RbPerempuan"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Perempuan"
+                                    android:textColor="@color/colorFirstDark" />
+                            </RadioGroup>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/CardUmur"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                app:layout_constraintBottom_toTopOf="@+id/CardAgama"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/RgJenisKelamin">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:hint="Umur"
+                                    android:textAlignment="center"
+                                    android:textColorHint="@color/colorFirstDark"
+                                    android:textStyle="bold"
+                                    app:counterEnabled="true"
+                                    app:counterMaxLength="2"
+                                    app:counterTextColor="@color/colorFirstDark"
+                                    app:endIconMode="clear_text">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/EdtUmur"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/colorThird"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:textColor="@color/colorFirstDark"
+                                        android:textColorHint="@color/colorFirstDark"
+                                        android:textStyle="bold" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/CardAgama"
+                                android:layout_width="0dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="15dp"
+                                app:layout_constraintBottom_toTopOf="@+id/BtnDaftar"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/CardUmur">
+
+                                <androidx.appcompat.widget.AppCompatSpinner
+                                    android:id="@+id/SpAgama"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="viewStart"
+                                    android:textColorHint="@color/colorFirstDark"
+                                    android:textStyle="bold"
+                                    android:tooltipText="Agama" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/BtnDaftar"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="11dp"
+                                android:layout_marginBottom="16dp"
+                                android:backgroundTint="@color/colorFirstDark"
+                                android:paddingTop="@dimen/btn_padding_small"
+                                android:paddingBottom="@dimen/btn_padding_small"
+                                android:text="Daftar"
+                                android:textColorHint="@color/colorFirst"
+                                app:cornerRadius="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/CardAgama" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                   
+
+                </ScrollView>
+            </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

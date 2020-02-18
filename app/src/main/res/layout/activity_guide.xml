@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFirst"
+    tools:context=".Guide">
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/CardKode"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="12dp">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ImgLogoGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_logo_foreground"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/TvGuide"/>
+            <TextView
+                android:id="@+id/TvGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pilihlah salah satu jawaban yang paling sesuai dengan opini kamu"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/BtnGuide"
+                android:layout_width="@dimen/card_lebar_pertanyaan"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/btn_padding_small"
+                android:paddingBottom="@dimen/btn_padding_small"
+                android:layout_marginTop="32dp"
+                android:text="Saya Mengerti"
+                android:backgroundTint="@color/colorFirstDark"
+                android:textColorHint="@color/colorFirst"
+                app:cornerRadius="16dp"
+                app:layout_constraintTop_toBottomOf="@id/TvGuide"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

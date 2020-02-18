@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFirst"
+    tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/CardPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorFirstDark"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RvBtnPager"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:id="@+id/ScPernyataan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintTop_toBottomOf="@id/CardPage"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/MenuBawah">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+            <TextView
+                android:id="@+id/TvPernyataan"
+                android:layout_width="@dimen/card_lebar_pertanyaan"
+                android:layout_height="@dimen/card_tinggi_pertanyaan"
+                android:background="@color/colorThird"
+                android:gravity="center"
+                android:text="..."
+                android:textAlignment="center"
+                android:textColor="@color/colorFirstDark"
+                android:textSize="24sp"
+                android:padding="8dp"
+                app:strokeWidth="4dp"
+                app:layout_constraintBottom_toTopOf="@id/TvJumlahTerjawab"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/TvJumlahTerjawab"
+                android:layout_width="@dimen/card_lebar_pertanyaan"
+                android:layout_height="wrap_content"
+                android:background="@color/colorThird"
+                android:gravity="center"
+                android:text="..."
+                android:textAlignment="center"
+                android:textColor="@color/colorFirstDark"
+                android:textSize="16dp"
+                android:padding="8dp"
+                app:layout_constraintBottom_toTopOf="@id/TgGJawaban"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/TgGJawaban"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/TvJumlahTerjawab">
+
+                <com.google.android.material.button.MaterialButton
+                android:id="@+id/BtnSangatSetuju"
+                android:layout_width="@dimen/card_lebar_pertanyaan"
+                android:layout_height="wrap_content"
+                android:text="@string/text_btn1"
+                    android:textColor="@color/colorFirstDark"
+                    android:backgroundTint="@color/colorThird"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    app:strokeWidth="4dp"
+                android:layout_marginTop="@dimen/btn_margin_medium" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/BtnSetuju"
+                    android:layout_width="@dimen/card_lebar_pertanyaan"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_btn2"
+                    android:textColor="@color/colorFirstDark"
+                    android:backgroundTint="@color/colorThird"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    app:strokeWidth="4dp"
+                    app:layout_constraintBottom_toTopOf="@id/BtnTidakSetuju"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/BtnSangatSetuju" />
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/BtnTidakSetuju"
+                        android:layout_width="@dimen/card_lebar_pertanyaan"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_btn3"
+                    android:textColor="@color/colorFirstDark"
+                    android:backgroundTint="@color/colorThird"
+                    app:strokeWidth="4dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/BtnSangatTidakSetuju"
+                    android:layout_width="@dimen/card_lebar_pertanyaan"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_btn4"
+                    android:textColor="@color/colorFirstDark"
+                    android:backgroundTint="@color/colorThird"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    app:strokeWidth="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/BtnTidakSetuju" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+            </LinearLayout>
+        </LinearLayout>
+        </ScrollView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/MenuBawah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/BtnKembali"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="Kembali"
+                android:textColor="@color/colorFirstDark"
+                android:theme="@style/Invers"
+                app:layout_constraintRight_toLeftOf="@id/BtnLanjut"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/BtnLanjut"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="Selanjutnya"
+                android:backgroundTint="@color/colorFirstDark"
+                android:theme="@style/Invers"
+                app:layout_constraintLeft_toRightOf="@id/BtnKembali"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/framelayout_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

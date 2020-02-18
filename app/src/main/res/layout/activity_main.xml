@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/MenuAtas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorFirstDark"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/MenuTengah">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RvBtnPager"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/MenuTengah"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/MenuBawah"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/MenuAtas">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/CvSoal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toTopOf="@id/TgGJawaban"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/TvPernyataan"
+                        android:layout_width="@dimen/card_lebar_pertanyaan"
+                        android:layout_height="@dimen/card_tinggi_pertanyaan"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/colorThird"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="..."
+                        android:textAlignment="center"
+                        android:textColor="@color/colorFirstDark"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toTopOf="@id/TvJumlahTerjawab"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/TvJumlahTerjawab"
+                        android:layout_width="@dimen/card_lebar_pertanyaan"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorThird"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="..."
+                        android:textAlignment="center"
+                        android:textColor="@color/colorFirstDark"
+                        android:textSize="16dp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/TvPernyataan"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/TgGJawaban"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/CvSoal"
+                android:background="@drawable/button_toggle_background"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/BtnSangatSetuju"
+                    android:layout_width="@dimen/card_lebar_pertanyaan"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/btn_margin_medium"
+                    android:text="@string/text_btn1"
+                    app:strokeWidth="4dp"
+                    android:backgroundTint="@android:color/white"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/BtnSetuju"
+                     android:layout_width="@dimen/card_lebar_pertanyaan"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_btn2"
+                    android:backgroundTint="@android:color/white"
+                    app:strokeWidth="4dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    app:layout_constraintBottom_toTopOf="@id/BtnTidakSetuju"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/BtnSangatSetuju" />
+
+                <Button
+                    android:id="@+id/BtnTidakSetuju"
+                    android:layout_width="@dimen/card_lebar_pertanyaan"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_btn3"
+                    app:strokeWidth="4dp"
+                    android:backgroundTint="@android:color/white"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <Button
+                    android:id="@+id/BtnSangatTidakSetuju"
+                    android:layout_width="@dimen/card_lebar_pertanyaan"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_btn4"
+                    app:strokeWidth="4dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:backgroundTint="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/BtnTidakSetuju" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/MenuBawah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/BtnKembali"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="Kembali"
+                android:textColor="@color/colorFirstDark"
+                android:theme="@style/Invers"
+                app:layout_constraintRight_toLeftOf="@id/BtnLanjut"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/BtnLanjut"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="Selanjutnya"
+                android:backgroundTint="@color/colorFirstDark"
+                android:theme="@style/Invers"
+                app:layout_constraintLeft_toRightOf="@id/BtnKembali"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

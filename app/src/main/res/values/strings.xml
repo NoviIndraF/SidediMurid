@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Si Dedi</string>
+    <string name="app_name_banner">Si Dedi</string>
+    <string name="app_name_sub_banner">(Deteksi Dini)</string>
+
+    <string name="text_pertanyaan">Pernyataan</string>
+    <string name="text_jawaban">Jawaban</string>
+
+    <string name="text_btn1">Sangat Setuju</string>
+    <string name="text_btn2">Setuju</string>
+    <string name="text_btn3">Tidak Setuju</string>
+    <string name="text_btn4">Sangat Tidak Setuju</string>
+
+    <string-array name="agama">
+        <item>Islam</item>
+        <item>Kristen</item>
+        <item>Katolik</item>
+        <item>Hindu</item>
+        <item>Buddha</item>
+        <item>Konghucu</item>
+    </string-array>
+</resources>

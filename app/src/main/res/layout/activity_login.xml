@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFirstDark"
+    tools:context=".Login">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/CardKode"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ImgLogo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="120dp"
+                android:layout_marginRight="120dp"
+                android:src="@drawable/ic_logo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/TvTitle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <TextView
+                android:id="@+id/TvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sistem Deteksi Dini"
+                android:textSize="28sp"
+                android:textColor="@color/colorFirstDark"
+                android:layout_margin="12dp"
+                app:layout_constraintBottom_toTopOf="@id/VvGaris"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ImgLogo" />
+
+            <View
+                android:id="@+id/VvGaris"
+                android:layout_width="@dimen/card_lebar_pertanyaan"
+                android:layout_height="4dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintBottom_toTopOf="@id/CardKodeKelas"
+                android:background="@color/colorFirstDark"
+                app:layout_constraintTop_toBottomOf="@id/VvGaris"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/CardKodeKelas"
+                android:layout_width="@dimen/card_lebar_pertanyaan"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/VvGaris"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/BtnMasuk">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="KODE KELAS"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColorHint="@color/colorFirstDark"
+                    android:background="#FFFFFF"
+                    app:endIconMode="custom"
+                    app:endIconTint="@color/colorFirstDark"
+                    app:endIconDrawable="@drawable/ic_class">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/EdtKodeKelas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorThird"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorFirstDark"
+                        android:textStyle="bold" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/BtnMasuk"
+                android:layout_width="@dimen/card_lebar_pertanyaan"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:layout_marginBottom="120dp"
+                android:backgroundTint="@color/colorFirstDark"
+                android:layout_marginTop="24dp"
+                android:paddingTop="@dimen/btn_padding_small"
+                android:paddingBottom="@dimen/btn_padding_small"
+                android:text="Masuk"
+                app:cornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/CardKodeKelas" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
